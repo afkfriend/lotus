@@ -20,14 +20,19 @@ ga('send', 'pageview');
   
   <title>Welcome | Lotus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="Welcome to our website, there’s not much here yet, but please wait for the game to launch.">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Welcome">
 <meta property="og:url" content="http://afkfriend.github.io/lotus/2018/08/08/Welcome/index.html">
 <meta property="og:site_name" content="Lotus">
+<meta property="og:description" content="Welcome to our website, there’s not much here yet, but please wait for the game to launch.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-08T09:50:21.659Z">
+<meta property="og:image" content="http://afkfriend.github.io/images/3rd.png">
+<meta property="og:updated_time" content="2018-08-08T16:09:35.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Welcome">
+<meta name="twitter:description" content="Welcome to our website, there’s not much here yet, but please wait for the game to launch.">
+<meta name="twitter:image" content="http://afkfriend.github.io/images/3rd.png">
 <meta name="twitter:creator" content="@https:&#x2F;&#x2F;twitter.com&#x2F;afkFriend">
   
   
@@ -80,6 +85,16 @@ ga('send', 'pageview');
   </div>
   <div class="article-inner">
     
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img fancybox" href="/lotus/images/3rd.png" rel="gallery_cjklhpylt0000qgvepmd2qj42">
+        <img src="/lotus/images/3rd.png" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
     
       <header class="article-header">
         
@@ -94,7 +109,8 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>Welcome to our website, there’s not much here yet, but please wait for the game to launch.</p>
+
       
     </div>
     
@@ -167,7 +183,7 @@ ga('send', 'pageview');
 </nav>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
   <link rel="stylesheet" href="/lotus/fancybox/jquery.fancybox.css">
@@ -176,6 +192,28 @@ ga('send', 'pageview');
 
 <script src="/lotus/js/script.js"></script>
 
+
+
+<!-- Query Live Streams from a list -->
+<script>
+var ids = [46346234, 48827570, 60094199, 110137926];
+var readable_ids = ['Vero', 'Saintone', 'JiggaJacks', 'Friend'];
+$(document).ready(function() {
+   $.ajax({
+    type: 'GET',
+    url: 'https://api.twitch.tv/helix/streams?user_id=110137926?user_id=46346234?user_id=48827570?user_id=60094199',    
+    headers: {'Client-ID': 'zgvrcjfly1vvr2xng6ig9hkgez32us'},
+    success: function (json) {
+      if (Object.keys(json.data) >= 1)
+      {
+        document.getElementById("result").innerHTML = JSON.stringify(json);
+      } else {
+        document.getElementById("result").innerHTML = "<h1 id='livestreams'>No live channels!</h1>";
+      }
+    }
+    }); 
+});
+</script>
 
 
   </div>

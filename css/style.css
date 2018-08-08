@@ -127,6 +127,13 @@ body {
   font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-text-size-adjust: 100%;
 }
+#latest {
+  background-color: #eee;
+  color: #333;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
 .outer {
   max-width: 920px;
   margin: 0 auto;
@@ -160,6 +167,27 @@ body {
 #container {
   position: relative;
 }
+#livestreams {
+  color: #ddd;
+  font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.6em;
+}
+button {
+  background-color: #111;
+  border: none;
+  color: #eee;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 5px 5px 0px;
+}
+#button-group {
+  padding: 20px;
+}
 .mobile-nav-on {
   overflow: hidden;
 }
@@ -185,20 +213,26 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #999;
+  color: #ddd;
   margin-bottom: 1em;
   margin-left: 5px;
   line-height: 1em;
   text-shadow: 0 1px #fff;
   font-weight: bold;
 }
-.article-inner,
-.archive-article-inner {
-  background: #fff;
+.article-inner {
+  background: #111;
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
   border: 1px solid #ddd;
-  border-radius: 3px;
+}
+.archive-article-inner {
+  background: #111;
+  border: 1px solid #333;
+}
+.archive-article-inner:hover {
+  background: #222;
+  border: 1px solid #eee;
 }
 .article-entry h1,
 .widget h1 {
@@ -223,7 +257,7 @@ body {
 .article-entry h6,
 .widget h6 {
   font-size: 1em;
-  color: #999;
+  color: #ddd;
 }
 .article-entry hr,
 .widget hr {
@@ -470,7 +504,7 @@ body {
 .search-form-input {
   border: none;
   background: none;
-  color: #555;
+  color: #efefef;
   width: 100%;
   font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   outline: none;
@@ -531,7 +565,7 @@ body {
   text-decoration: none;
   font-size: 2em;
   font-weight: bold;
-  color: #555;
+  color: #efefef;
   line-height: 1.1em;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
@@ -539,10 +573,10 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #258fb8;
+  color: #d22;
 }
 .article-entry {
-  color: #555;
+  color: #efefef;
   padding: 0 20px;
 }
 .article-entry:before,
@@ -576,7 +610,7 @@ a.article-title:hover {
   margin: 1.1em 0;
 }
 .article-entry a {
-  color: #258fb8;
+  color: #d22;
   text-decoration: none;
 }
 .article-entry a:hover {
@@ -641,7 +675,7 @@ a.article-title:hover {
   margin-left: 1em;
 }
 .article-entry .caption {
-  color: #999;
+  color: #ddd;
   display: block;
   font-size: 0.9em;
   margin-top: 0.5em;
@@ -670,15 +704,15 @@ a.article-title:hover {
   padding: 6px 15px;
   border-radius: 15px;
   background: #222;
-  color: #999;
+  color: #ddd;
   text-shadow: 0 1px #fff;
   text-decoration: none;
 }
 .article-more-link a:hover {
-  background: #258fb8;
+  background: #d22;
   color: #fff;
   text-decoration: none;
-  text-shadow: 0 1px #1e7293;
+  text-shadow: 0 1px #b11b1b;
 }
 .article-footer {
   font-size: 0.85em;
@@ -696,11 +730,11 @@ a.article-title:hover {
   clear: both;
 }
 .article-footer a {
-  color: #999;
+  color: #ddd;
   text-decoration: none;
 }
 .article-footer a:hover {
-  color: #555;
+  color: #efefef;
 }
 .article-tag-list-item {
   float: left;
@@ -760,7 +794,7 @@ a.article-title:hover {
 .article-nav-link-wrap {
   text-decoration: none;
   text-shadow: 0 1px #fff;
-  color: #999;
+  color: #ddd;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -769,7 +803,7 @@ a.article-title:hover {
   display: block;
 }
 .article-nav-link-wrap:hover {
-  color: #555;
+  color: #efefef;
 }
 @media screen and (min-width: 768px) {
   .article-nav-link-wrap {
@@ -828,7 +862,7 @@ a.article-title:hover {
   box-sizing: border-box;
   font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   padding: 0 15px;
-  color: #555;
+  color: #efefef;
   outline: none;
   border: 1px solid #ddd;
   border-radius: 3px 3px 0 0;
@@ -941,7 +975,7 @@ a.article-title:hover {
   margin: 50px 0;
 }
 #comments a {
-  color: #258fb8;
+  color: #d22;
 }
 .archives-wrap {
   margin: 50px 0;
@@ -956,6 +990,10 @@ a.article-title:hover {
 }
 .archive-year-wrap {
   margin-bottom: 1em;
+}
+.archive-year {
+  color: #eee;
+  font-size: 25px;
 }
 .archives {
   -webkit-column-gap: 10px;
@@ -982,14 +1020,40 @@ a.article-title:hover {
   overflow: hidden;
   break-inside: avoid-column;
 }
+.archive-article-block {
+  -webkit-background-size: auto 280px;
+  -moz-background-size: auto 280px;
+  background-size: auto 280px;
+  height: 280px;
+  width: 280px;
+  object-fit: cover;
+  overflow: hidden;
+  margin: 1px;
+}
+.text-block {
+  background-color: #000;
+  font-size: 30px;
+  padding: 120px 0px 0 30px;
+  color: #fff;
+  width: 280px;
+  height: 280px;
+  background: -webkit-linear-gradient(rgba(0,0,0,0.3), #000);
+  background: -moz-linear-gradient(rgba(0,0,0,0.3), #000);
+  background: -ms-linear-gradient(rgba(0,0,0,0.3), #000);
+  background: linear-gradient(rgba(0,0,0,0.3), #000);
+}
 .archive-article-inner {
-  padding: 10px;
+  height: 280px;
+  width: 280px;
   margin-bottom: 15px;
+  opacity: 1;
+  overflow: hidden;
 }
 .archive-article-title {
+  display: inline-block;
   text-decoration: none;
-  font-weight: bold;
-  color: #555;
+  font-weight: 450;
+  color: #fff;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -ms-transition: color 0.2s;
@@ -997,18 +1061,24 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #258fb8;
+  color: #d22;
+  text-decoration: none;
 }
 .archive-article-footer {
   margin-top: 1em;
 }
 .archive-article-date {
-  color: #999;
+  color: #fff;
   text-decoration: none;
-  font-size: 0.85em;
+  font-size: 0.6em;
   line-height: 1em;
   margin-bottom: 0.5em;
-  display: block;
+  padding: 2px;
+  display: inline;
+}
+.archive-article-date:hover {
+  color: #d22;
+  text-decoration: none;
 }
 #page-nav {
   margin: 50px auto;
@@ -1016,9 +1086,8 @@ a.article-title:hover {
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
   border: 1px solid #ddd;
-  border-radius: 3px;
   text-align: center;
-  color: #999;
+  color: #ddd;
   overflow: hidden;
 }
 #page-nav:before,
@@ -1036,11 +1105,11 @@ a.article-title:hover {
   height: 2ex;
 }
 #page-nav a {
-  color: #999;
+  color: #ddd;
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #999;
+  background: #ddd;
   color: #fff;
 }
 #page-nav .prev {
@@ -1058,20 +1127,20 @@ a.article-title:hover {
   }
 }
 #page-nav .current {
-  color: #555;
+  color: #efefef;
   font-weight: bold;
 }
 #page-nav .space {
   color: #ddd;
 }
 #footer {
-  background: #262a30;
+  background: #00001a;
   padding: 50px 0;
   border-top: 1px solid #ddd;
-  color: #999;
+  color: #ddd;
 }
 #footer a {
-  color: #258fb8;
+  color: #d22;
   text-decoration: none;
 }
 #footer a:hover {
@@ -1192,7 +1261,7 @@ a.article-title:hover {
   margin-left: 20px;
 }
 .article-entry .gist .gist-file .gist-meta a {
-  color: #258fb8;
+  color: #d22;
   font-weight: normal;
 }
 .article-entry .gist .gist-file .gist-meta a:hover {
@@ -1268,7 +1337,7 @@ pre .javascript .function {
 @media screen and (max-width: 479px) {
   .mobile-nav-link {
     display: block;
-    color: #999;
+    color: #ddd;
     text-decoration: none;
     padding: 15px 20px;
     font-weight: bold;
@@ -1297,7 +1366,7 @@ pre .javascript .function {
   font-weight: bold;
 }
 .widget {
-  color: #999;
+  color: #ddd;
 }
 .widget ul li,
 .widget ol li {
@@ -1334,7 +1403,7 @@ pre .javascript .function {
 .tag-list-count,
 .archive-list-count {
   padding-left: 5px;
-  color: #999;
+  color: #ddd;
   font-size: 0.85em;
 }
 .category-list-count:before,

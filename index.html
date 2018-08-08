@@ -73,11 +73,93 @@ ga('send', 'pageview');
   <div id="banner"></div>
 </header>
       <div class="outer">
-        <section id="main">
+        <section id="main"><!--
+
     <h2 id="subtitle-wrap">
       <a href="/lotus/" id="subtitle">A guild in MapleStory 2 residing on the NA-East server.</a>
     </h2>
-</section>
+
+-->
+
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/lotus/archives/2018" class="archive-year">Latest Posts: 2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+  <header class="archive-article-header">
+             
+      <div class="archive-article-block" style="background-image:url( /lotus/images/3rd.png);">
+          <div class="text-block">
+          <a href="/lotus/2018/08/08/Welcome/" class="archive-article-date">
+  <time datetime="2018-08-08T09:50:21.000Z" itemprop="datePublished">Aug 8</time>
+</a>
+          
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/lotus/2018/08/08/Welcome/">Welcome</a>
+    </h1>
+  
+
+          </div>
+      </div>
+      
+    </header>
+  </div>
+</article>        
+  
+  
+    </div></section>
+  
+
+
+
+<!-- Live Streams -->
+<!-- List of Streamers -->
+<div class="button-group">
+<h1 id="livestreams">LIVE STREAMS</h1>
+<button class="stream" name="Vero" onClick="streamToggle('itsvero')" value="itsvero">Vero</button>
+<button class="stream" name="Saintone" onClick="streamToggle('saintonelive')" value="saintonelive">Saintone</button>
+<button class="stream" name="JiggaJacks" onClick="streamToggle('jiggajacks')" value="jiggajacks">JiggaJacks</button>
+<button class="stream" name="Friend" onClick="streamToggle('itsfriend')" value="itsfriend">Friend</button>
+<div id="result"></div>
+</div>
+
+<!-- Add a placeholder for the Twitch embed -->
+<div id="twitch-embed"></div>
+
+<!-- Load the Twitch embed script -->
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+<!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+<script type="text/javascript" id="twitch">
+  var embed = new Twitch.Embed("twitch-embed", {
+    width: 940,
+    height: 480,
+    channel: "itsvero",
+    layout: "video",
+    autoplay: false
+  });
+  
+function streamToggle(name) {
+    var player = embed.getPlayer();
+    player.setChannel(name);
+    var iframeList = document.getElementsByTagName("iframe")[0];
+    iframeList.innerHTML = '<iframe src="http://player.twitch.tv/?channel="' + name + 'height="720" width="1280" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>';
+};
+
+</script>
+
+<br />
+<br /></section>
         
       </div>
       <footer id="footer">
@@ -140,7 +222,7 @@ ga('send', 'pageview');
 </nav>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
   <link rel="stylesheet" href="/lotus/fancybox/jquery.fancybox.css">
@@ -149,6 +231,28 @@ ga('send', 'pageview');
 
 <script src="/lotus/js/script.js"></script>
 
+
+
+<!-- Query Live Streams from a list -->
+<script>
+var ids = [46346234, 48827570, 60094199, 110137926];
+var readable_ids = ['Vero', 'Saintone', 'JiggaJacks', 'Friend'];
+$(document).ready(function() {
+   $.ajax({
+    type: 'GET',
+    url: 'https://api.twitch.tv/helix/streams?user_id=110137926?user_id=46346234?user_id=48827570?user_id=60094199',    
+    headers: {'Client-ID': 'zgvrcjfly1vvr2xng6ig9hkgez32us'},
+    success: function (json) {
+      if (Object.keys(json.data) >= 1)
+      {
+        document.getElementById("result").innerHTML = JSON.stringify(json);
+      } else {
+        document.getElementById("result").innerHTML = "<h1 id='livestreams'>No live channels!</h1>";
+      }
+    }
+    }); 
+});
+</script>
 
 
   </div>

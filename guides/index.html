@@ -20,17 +20,17 @@ ga('send', 'pageview');
   
   <title>Guides | Lotus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Class GuidesSaintone’s Knight Guide   Other Guides">
+  <meta name="description" content="Class Guides[Guide] Knight Compendium by Von &amp;amp; Saintone[ Thread | Google Doc ]  Other Guides">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Guides">
 <meta property="og:url" content="http://afkfriend.github.io/lotus/guides/index.html">
 <meta property="og:site_name" content="Lotus">
-<meta property="og:description" content="Class GuidesSaintone’s Knight Guide   Other Guides">
+<meta property="og:description" content="Class Guides[Guide] Knight Compendium by Von &amp;amp; Saintone[ Thread | Google Doc ]  Other Guides">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-08T09:03:35.732Z">
+<meta property="og:updated_time" content="2018-08-08T18:54:53.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Guides">
-<meta name="twitter:description" content="Class GuidesSaintone’s Knight Guide   Other Guides">
+<meta name="twitter:description" content="Class Guides[Guide] Knight Compendium by Von &amp;amp; Saintone[ Thread | Google Doc ]  Other Guides">
 <meta name="twitter:creator" content="@https:&#x2F;&#x2F;twitter.com&#x2F;afkFriend">
   
   
@@ -97,8 +97,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Class-Guides"><a href="#Class-Guides" class="headerlink" title="Class Guides"></a>Class Guides</h2><p><a href="http://forums.maplestory2.nexon.net/discussion/34965/guide-knight-compendium-by-von-saintone" target="_blank" rel="noopener">Saintone’s Knight Guide</a></p>
-<hr>
+        <h1 id="Class-Guides"><a href="#Class-Guides" class="headerlink" title="Class Guides"></a>Class Guides</h1><h2 id="Guide-Knight-Compendium-by-Von-amp-Saintone"><a href="#Guide-Knight-Compendium-by-Von-amp-Saintone" class="headerlink" title="[Guide] Knight Compendium by Von &amp; Saintone"></a>[Guide] Knight Compendium by Von &amp; Saintone</h2><h3 id="Thread-Google-Doc"><a href="#Thread-Google-Doc" class="headerlink" title="[ Thread | Google Doc ]"></a>[ <a href="http://forums.maplestory2.nexon.net/discussion/34965/guide-knight-compendium-by-von-saintone" target="_blank" rel="noopener">Thread</a> | <a href="https://docs.google.com/document/d/1m0k4WNXiLy8d4E0ZhiNKlD6ge2LeKQmdMwP7RuVejTw/edit" target="_blank" rel="noopener">Google Doc</a> ]</h3><hr>
 
 <h2 id="Other-Guides"><a href="#Other-Guides" class="headerlink" title="Other Guides"></a>Other Guides</h2>
       
@@ -173,7 +172,7 @@ ga('send', 'pageview');
 </nav>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
   <link rel="stylesheet" href="/lotus/fancybox/jquery.fancybox.css">
@@ -182,6 +181,28 @@ ga('send', 'pageview');
 
 <script src="/lotus/js/script.js"></script>
 
+
+
+<!-- Query Live Streams from a list -->
+<script>
+var ids = [46346234, 48827570, 60094199, 110137926];
+var readable_ids = ['Vero', 'Saintone', 'JiggaJacks', 'Friend'];
+$(document).ready(function() {
+   $.ajax({
+    type: 'GET',
+    url: 'https://api.twitch.tv/helix/streams?user_id=110137926?user_id=46346234?user_id=48827570?user_id=60094199',    
+    headers: {'Client-ID': 'zgvrcjfly1vvr2xng6ig9hkgez32us'},
+    success: function (json) {
+      if (Object.keys(json.data) >= 1)
+      {
+        document.getElementById("result").innerHTML = JSON.stringify(json);
+      } else {
+        document.getElementById("result").innerHTML = "<h1 id='livestreams'>No live channels!</h1>";
+      }
+    }
+    }); 
+});
+</script>
 
 
   </div>
