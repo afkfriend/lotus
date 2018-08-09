@@ -164,6 +164,17 @@ body {
 .clear {
   clear: both;
 }
+iframe {
+  width: 100%;
+}
+#stream-chat {
+  width: 33%;
+  float: left;
+}
+#twitch-embed {
+  width: 66%;
+  float: left;
+}
 #container {
   position: relative;
 }
