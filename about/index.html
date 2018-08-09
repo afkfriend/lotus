@@ -88,7 +88,7 @@ ga('send', 'pageview');
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img fancybox" href="/lotus/images/3rd.png" rel="gallery_cjklpdvbj000128veig5ropbt">
+      <a class="article-gallery-img fancybox" href="/lotus/images/3rd.png" rel="gallery_cjkltn7id0000i8ved38kyakg">
         <img src="/lotus/images/3rd.png" itemprop="image">
       </a>
     
@@ -197,24 +197,61 @@ ga('send', 'pageview');
 
 
 
+<!-- Load the Twitch embed script -->
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+<!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+<script type="text/javascript" id="twitch">
+  var embed = new Twitch.Embed("twitch-embed", {
+    width: 940,
+    height: 480,
+    channel: "itsvero",
+    layout: "video",
+    autoplay: false
+  });
+  
+function streamToggle(name) {
+    var player = embed.getPlayer();
+    player.setChannel(name);
+};
+
 <!-- Query Live Streams from a list -->
-<script>
-var ids = [46346234, 48827570, 60094199, 110137926];
-var readable_ids = ['Vero', 'Saintone', 'JiggaJacks', 'Friend'];
-$(document).ready(function() {
+var ids = ["46346234", "48827570", "60094199", "110137926"];
+var readable_ids = ["itsvero", "saintonelive", "jiggajacks", "itsfriend"];
+var i = 0;
+var streamer = "";
+
+
+<!-- Twitch stream API Autoswitch -->
+$(window).on('load', function() {
    $.ajax({
     type: 'GET',
-    url: 'https://api.twitch.tv/helix/streams?user_id=110137926?user_id=46346234?user_id=48827570?user_id=60094199',    
-    headers: {'Client-ID': 'oiao56bstjfwqkn38ux770it20lhsq'},
+    url: 'https://api.twitch.tv/helix/streams?user_id=110137926&user_id=46346234&user_id=48827570&user_id=60094199&user_id=24505236',    
+    headers: {'Client-ID': 'oiao56bstjfwqkn38ux770it20lhsq'}, 
     success: function (json) {
-      if (Object.keys(json.data) >= 1)
-      {
-        document.getElementById("result").innerHTML = JSON.stringify(json);
-      } else {
-        document.getElementById("result").innerHTML = "<h1 id='livestreams'>No live channels!</h1>";
-      }
+        var j = 0;
+        for (i = 0; i < Object.keys(json.data).length; i++)
+        {
+          if (json.data[i].type == "live") {
+            for (j = 0; j < ids.length; j++)
+            {
+                // Check for id match
+                if(json.data[i].user_id == ids[j])
+                {
+                    streamer = readable_ids[j];
+                    var btn = document.getElementById(streamer);
+                    btn.style.backgroundColor = "#d22";
+                    streamToggle(streamer);
+                    document.getElementById("result").innerHTML = streamer;
+                }
+            }
+          }
+        }
+        if (!streamer) {
+            document.getElementById("result").innerHTML = "<h1 id='livestreams'>No live channels!</h1>";
+        }
     }
-    }); 
+   });
 });
 </script>
 
