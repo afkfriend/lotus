@@ -1044,7 +1044,7 @@ a.article-title:hover {
 .text-block {
   background-color: #000;
   font-size: 30px;
-  padding: 120px 0px 0 30px;
+  padding: 120px 0px 0 10px;
   color: #fff;
   width: 280px;
   height: 280px;
@@ -1052,6 +1052,7 @@ a.article-title:hover {
   background: -moz-linear-gradient(rgba(0,0,0,0.3), #000);
   background: -ms-linear-gradient(rgba(0,0,0,0.3), #000);
   background: linear-gradient(rgba(0,0,0,0.3), #000);
+  word-wrap: normal;
 }
 .archive-article-inner {
   height: 280px;
